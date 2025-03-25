@@ -1,2 +1,3 @@
-# titan-tutorials
-Short discussion to train/finetune models
+# Small Tutorials within Titan
+
+Short discussions to train/finetune models
