@@ -158,11 +158,11 @@ pipe = pipeline("text-generation", model="./qwen1.5-1.8b-titan", tokenizer=token
 prompt = "### Instruction: Solve x + 5 = 12\n### Response: "
 output = pipe(prompt, max_new_tokens=200)[0]["generated_text"]
 print(output)
+```
 
 
 ## 6. Kết quả mong đợi
 
-```
 - **Single `<think>`**:
   ```
   ### Instruction: Solve x + 5 = 12
