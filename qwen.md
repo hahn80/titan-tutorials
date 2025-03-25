@@ -152,9 +152,13 @@ if accelerator.is_main_process:
 ## 5. Test the Model
 
 ```python
-from transformers import pipeline
+from transformers import pipeline, AutoTokenizer
 
-pipe = pipeline("text-generation", model="./qwen1.5-1.8b-titan", tokenizer=tokenizer)
+
+model_path = "./qwen1.5-1.8b-titan"
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+pipe = pipeline("text-generation", model=model_path, tokenizer=tokenizer)
+
 prompt = "### Instruction: Solve x + 5 = 12\n### Response: "
 output = pipe(prompt, max_new_tokens=200)[0]["generated_text"]
 print(output)
